@@ -36,6 +36,7 @@ alias docker_reset='docker_stop && docker_rm && docker_prune'
 alias docker_ps="docker ps --format '{{.ID}} - {{.Names}} - {{.Status}} - {{.Image}}'"
 alias testing_deploy="echo testing4"
 alias reload=". ~/.bash_profile"
+alias lsof='f(){ lsof -i tcp:"$@";  unset -f f; }; f'
 alias clean_pycharm_debug="docker rm $(docker ps -a --filter="label=com.jetbrains.pycharm_helpers.version" -q)"
 alias grpc="docker run -it -v $PWD:/usr/src/app -w /usr/src/app grpc/go:1.0 "
 alias awsSsh="docker run -it -v $(dirname $SSH_AUTH_SOCK):$(dirname $SSH_AUTH_SOCK) -e SSH_AUTH_SOCK=$SSH_AUTH_SOCK  -v ~/.ssh:/root/.ssh/ -e AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} -e AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} -e AWS_REGION=${AWS_REGION} mwaaas/aws_ssh:latest "
