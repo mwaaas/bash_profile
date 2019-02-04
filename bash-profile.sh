@@ -28,6 +28,7 @@ complete -F _makefile_targets make
 export AWS_REGION=eu-west-1
 alias c="docker-compose"
 alias up="docker-compose up"
+alias upd="docker-compose up -d"
 alias aws_work="export AWS_ACCESS_KEY_ID=$WORK_AWS_ACCESS_KEY_ID; export AWS_SECRET_ACCESS_KEY=$WORK_AWS_SECRET_ACCESS_KEY"
 alias docker_stop='docker stop `docker ps -aq`'
 alias docker_rm='docker rm `docker ps -aq`'
