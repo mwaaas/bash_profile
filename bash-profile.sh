@@ -3,6 +3,11 @@ if [ -f ~/.bashrc ]; then
     source ~/.bashrc
 fi
 
+
+# Install cmake
+# https://cmake.org/files/v3.13/
+# and install
+# then the following command will work
 PATH="/Applications/CMake.app/Contents/bin":"$PATH"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
