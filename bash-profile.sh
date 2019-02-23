@@ -3,6 +3,7 @@ if [ -f ~/.bashrc ]; then
     source ~/.bashrc
 fi
 
+PATH="/Applications/CMake.app/Contents/bin":"$PATH"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
