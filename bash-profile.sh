@@ -49,7 +49,8 @@ alias grpc="docker run -it -v $PWD:/usr/src/app -w /usr/src/app grpc/go:1.0 "
 alias awsSsh="docker run -it -v $(dirname $SSH_AUTH_SOCK):$(dirname $SSH_AUTH_SOCK) -e SSH_AUTH_SOCK=$SSH_AUTH_SOCK  -v ~/.ssh:/root/.ssh/ -e AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} -e AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} -e AWS_REGION=${AWS_REGION} mwaaas/aws_ssh:latest "
 alias zappashell="docker run -it -v ~/.aws:$/root/.aws -v $(pwd):/var/task --rm mcrowson/zappa-builder bash -c 'virtualenv docker_env && source docker_env/bin/activate && pip install -r requirements.txt && zappa update dev && rm -rf docker_env'"
 alias dev_pull="docker pull mwaaas/ansible_playbook:latest"
-alias dev="docker run --rm -it --network=host -v ~/.aws:/root/.aws -v ~/.ssh:/root/.ssh -v $(PWD):/usr/src/app mwaaas/ansible_playbook:latest-latest bash"
+alias dev='echo $(PWD) && docker run --rm -it --network=host -v ~/.aws:/root/.aws -v ~/.ssh:/root/.ssh -v $(PWD):/usr/src/app mwaaas/ansible_playbook:latest-latest bash'
+alias reload=". ~/.bash_profile"
 aws_work
 
 
@@ -57,6 +58,6 @@ aws_work
 # https://docs.docker.com/compose/completion/
 # configuring it to work with alias
 # https://askubuntu.com/questions/1109648/how-to-configure-auto-completion-on-docker-compose-alias
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-. $(brew --prefix)/etc/bash_completion
-fi
+#if [ -f $(brew --prefix)/etc/bash_completion ]; then
+#. $(brew --prefix)/etc/bash_completion
+#fi
