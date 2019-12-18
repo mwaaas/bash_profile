@@ -58,6 +58,6 @@ aws_work
 # https://docs.docker.com/compose/completion/
 # configuring it to work with alias
 # https://askubuntu.com/questions/1109648/how-to-configure-auto-completion-on-docker-compose-alias
-#if [ -f $(brew --prefix)/etc/bash_completion ]; then
-#. $(brew --prefix)/etc/bash_completion
-#fi
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+. $(brew --prefix)/etc/bash_completion
+fi
